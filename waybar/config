@@ -1,0 +1,65 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 15,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-top": 1,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": [],
+    "modules-right": ["network", "disk", "disk#stock",  "temperature", "cpu", "memory", "battery", "clock", "tray"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+    },
+    "tray": {
+        "spacing": 5,
+		"icon-size": 21,
+		"show-passive-items": true,
+    },
+	"disk": {
+  		"interval": 60,
+  		"format": "{path} {free}",
+  	},
+	"disk#stock": {
+         "interval": 60,
+         "format": "Stock {free}",
+		 "path": "/mnt/stock"
+    },
+    "clock": {
+        "format": "{:%R %a %d.%m.%y}"
+    },
+    "cpu": {
+        "format": " {usage}%"
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "temperature": {
+        "critical-threshold": 75,
+        "format": " {temperatureC}°C"
+    },
+    "battery": {
+        "bat": "BAT1",
+        "full-at": 95,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-disconnected": "⚠ Disconnected"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+}
